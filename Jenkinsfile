@@ -6,9 +6,9 @@ pipeline {
         echo 'hi!'
       }
     }
-    stage('tmp') {
+    stage('build') {
       steps {
-        pwd(tmp: true)
+        sh 'mvn clean install'
       }
     }
   }
