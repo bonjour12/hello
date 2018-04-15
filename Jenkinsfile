@@ -17,5 +17,11 @@ pipeline {
         fileExists 'Test123-0.0.1-SNAPSHOT.jar'
       }
     }
+    stage('package') {
+      steps {
+        sh '''mvn clean package
+'''
+      }
+    }
   }
 }
