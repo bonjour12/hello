@@ -12,5 +12,10 @@ pipeline {
 '''
       }
     }
+    stage('test') {
+      steps {
+        fileExists 'Test123-0.0.1-SNAPSHOT.jar'
+      }
+    }
   }
 }
