@@ -13,8 +13,17 @@ pipeline {
       }
     }
     stage('test') {
-      steps {
-        fileExists 'Test123-0.0.1-SNAPSHOT.jar'
+      parallel {
+        stage('test') {
+          steps {
+            fileExists 'Test123-0.0.1-SNAPSHOT.jar'
+          }
+        }
+        stage('test2') {
+          steps {
+            echo 'tes t2'
+          }
+        }
       }
     }
     stage('package') {
